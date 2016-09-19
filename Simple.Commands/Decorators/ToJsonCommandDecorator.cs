@@ -1,13 +1,14 @@
 ﻿using System;
 using Newtonsoft.Json;
+using Simple.Commands.Handlers;
 
-namespace Simple.Commands.Commands.Decorators
+namespace Simple.Commands.Decorators
 {
-    public class CommandToJsonDecoratorHandler<TCommand,TResult> : ICommandHandler<TCommand, TResult>
+    public class ToJsonCommandDecorator<TCommand,TResult> : ICommandHandler<TCommand, TResult>
     {
         private readonly ICommandHandler<TCommand, TResult> _innerCommandHandler;
 
-        public CommandToJsonDecoratorHandler(ICommandHandler<TCommand,TResult> innerCommandHandler)
+        public ToJsonCommandDecorator(ICommandHandler<TCommand,TResult> innerCommandHandler)
         {
             if (innerCommandHandler == null) throw new ArgumentNullException(nameof(innerCommandHandler));
             _innerCommandHandler = innerCommandHandler;

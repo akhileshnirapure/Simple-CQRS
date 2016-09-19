@@ -1,4 +1,4 @@
-﻿namespace Simple.Commands.Commands
+﻿namespace Simple.Commands
 {
     public class AddTwoNumbersCommand : ICommand
     {

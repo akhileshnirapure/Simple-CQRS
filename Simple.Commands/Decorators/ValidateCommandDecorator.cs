@@ -1,14 +1,15 @@
 using System;
 using FluentValidation;
+using Simple.Commands.Handlers;
 
-namespace Simple.Commands.Commands.Decorators
+namespace Simple.Commands.Decorators
 {
-    public class ValidateCommandDecoratorHandler<TCommand, TResult> : ICommandHandler<TCommand, TResult>
+    public class ValidateCommandDecorator<TCommand, TResult> : ICommandHandler<TCommand, TResult>
     {
         private readonly ICommandHandler<TCommand, TResult> _innerCommandHandler;
         private readonly IValidator<TCommand> _validator;
 
-        public ValidateCommandDecoratorHandler(ICommandHandler<TCommand, TResult> innerCommandHandler,IValidator<TCommand> validator)
+        public ValidateCommandDecorator(ICommandHandler<TCommand, TResult> innerCommandHandler,IValidator<TCommand> validator)
         {
             if (innerCommandHandler == null) throw new ArgumentNullException(nameof(innerCommandHandler));
             if (validator == null) throw new ArgumentNullException(nameof(validator));

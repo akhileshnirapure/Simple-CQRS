@@ -1,7 +1,7 @@
 ﻿using System;
 using Simple.Models;
 
-namespace Simple.Commands.Commands.Handlers
+namespace Simple.Commands.Handlers
 {
     public class AddTwoNumbersCommandHandler : ICommandHandler<AddTwoNumbersCommand, AdditionResult>
     {

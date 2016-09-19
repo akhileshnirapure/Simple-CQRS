@@ -1,4 +1,4 @@
-﻿namespace Simple.Commands
+﻿namespace Simple.Commands.Handlers
 {
     public interface ICommandHandler<in TCommand, out TResult>
     {

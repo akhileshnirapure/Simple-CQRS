@@ -4,7 +4,8 @@ using Autofac;
 using Autofac.Core;
 using FluentValidation;
 using Simple.Commands;
-using Simple.Commands.Commands.Decorators;
+using Simple.Commands.Decorators;
+using Simple.Commands.Handlers;
 using Simple.Validations;
 
 namespace Simple.CQRS.Test
@@ -36,21 +37,21 @@ namespace Simple.CQRS.Test
                     .Where(handler => TypeExtensions.IsClosedTypeOf(handler, typeof(ICommandHandler<,>)))
                     .Select(keyedService => new KeyedService(COMMAND_HANDLER, keyedService)));
 
-            //  Register CommandToJsonDecoratorHandler which will decorate COMMAND_VALIDATOR and doesn't exposes any service
-            _containerBuilder.RegisterGenericDecorator(typeof(CommandToJsonDecoratorHandler<,>), typeof(ICommandHandler<,>),
+            //  Register ToJsonCommandDecorator which will decorate COMMAND_VALIDATOR and doesn't exposes any service
+            _containerBuilder.RegisterGenericDecorator(typeof(ToJsonCommandDecorator<,>), typeof(ICommandHandler<,>),
                 COMMAND_VALIDATOR, COMMAND_LOGGER);
 
-            //  Register CommandLogDecoratorHandler which will decorate COMMAND_LOGGER and doesn't exposes any service
-            _containerBuilder.RegisterGenericDecorator(typeof(CommandLogDecoratorHandler<,>), typeof(ICommandHandler<,>),
+            //  Register LogCommandDecorator which will decorate COMMAND_LOGGER and doesn't exposes any service
+            _containerBuilder.RegisterGenericDecorator(typeof(LogCommandDecorator<,>), typeof(ICommandHandler<,>),
                 COMMAND_LOGGER, toKey: null); //NOTE: Don't provide key, if you this is the last decorator to be called.
 
             //  Register ValidateCommandHandler which will decorate CommandHandler registered with COMMAND_HANDLER service
-            _containerBuilder.RegisterGenericDecorator(typeof(ValidateCommandDecoratorHandler<,>), typeof(ICommandHandler<,>),
+            _containerBuilder.RegisterGenericDecorator(typeof(ValidateCommandDecorator<,>), typeof(ICommandHandler<,>),
                 COMMAND_HANDLER, COMMAND_VALIDATOR);
 
             /*
              * Note: The order of Decorator registration doesn't matter, what matters in the Keyed Service Name
-             * e.g. ValidateCommandDecoratorHandler will wrap CommandHandler (Both implementing the same interface)
+             * e.g. ValidateCommandDecorator will wrap CommandHandler (Both implementing the same interface)
              * because the fromKey: COMMAND_HANDLER and toKey: COMMAND_VALIDATOR (optionally required for next handler in chain)
              * 
              * thus the overall order would be (in reverse-order)

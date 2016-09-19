@@ -4,7 +4,7 @@ using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using Simple.Commands;
-using Simple.Commands.Commands;
+using Simple.Commands.Handlers;
 using Simple.Models;
 
 namespace Simple.CQRS.Test

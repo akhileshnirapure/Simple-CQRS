@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Simple.Commands.Commands;
+using Simple.Commands;
 
 namespace Simple.Validations
 {

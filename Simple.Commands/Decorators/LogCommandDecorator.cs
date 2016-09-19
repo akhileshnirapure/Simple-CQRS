@@ -1,12 +1,13 @@
 ﻿using System;
+using Simple.Commands.Handlers;
 
-namespace Simple.Commands.Commands.Decorators
+namespace Simple.Commands.Decorators
 {
-    public class CommandLogDecoratorHandler<TCommand, TResult> : ICommandHandler<TCommand, TResult>
+    public class LogCommandDecorator<TCommand, TResult> : ICommandHandler<TCommand, TResult>
     {
         private readonly ICommandHandler<TCommand, TResult> _innerCommandHandler;
 
-        public CommandLogDecoratorHandler(ICommandHandler<TCommand, TResult> innerCommandHandler)
+        public LogCommandDecorator(ICommandHandler<TCommand, TResult> innerCommandHandler)
         {
             if (innerCommandHandler == null) throw new ArgumentNullException(nameof(innerCommandHandler));
             _innerCommandHandler = innerCommandHandler;
