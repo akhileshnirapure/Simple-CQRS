@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Commands", "Simple.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Validations", "Simple.Validations\Simple.Validations.csproj", "{0789BD86-CA56-466C-A560-B1345FF85F14}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Api", "Simple.Api\Simple.Api.csproj", "{6564748D-509A-4FEB-810F-3EEF57737044}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{0789BD86-CA56-466C-A560-B1345FF85F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0789BD86-CA56-466C-A560-B1345FF85F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0789BD86-CA56-466C-A560-B1345FF85F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6564748D-509A-4FEB-810F-3EEF57737044}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6564748D-509A-4FEB-810F-3EEF57737044}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6564748D-509A-4FEB-810F-3EEF57737044}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6564748D-509A-4FEB-810F-3EEF57737044}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
