@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddTwoNumbersValidator.cs" />
+    <Compile Include="DivideTwoNumbersValidator.cs" />
+    <Compile Include="FirstNameValidator.cs" />
+    <Compile Include="FullNameValidator.cs" />
+    <Compile Include="LastNameValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

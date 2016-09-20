@@ -21,7 +21,7 @@ namespace Simple.Commands.Decorators
         {
             Console.WriteLine("Validation CommandHandler Start");
 
-            _validator.ValidateAndThrow(command, ruleSet: "myset");
+            _validator.ValidateAndThrow(command, ruleSet: "default,myset");
             Console.WriteLine("CommandModel is Valid");
             var result = _innerCommandHandler.Execute(command);
             Console.WriteLine("Validation CommandHandler End");

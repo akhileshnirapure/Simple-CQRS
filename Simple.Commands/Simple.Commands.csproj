@@ -48,12 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DivideTwoNumbersCommand.cs" />
+    <Compile Include="FirstNameCommand.cs" />
+    <Compile Include="FullNameCommand.cs" />
     <Compile Include="Handlers\AddTwoNumbersCommandHandler.cs" />
     <Compile Include="Decorators\LogCommandDecorator.cs" />
     <Compile Include="Decorators\ToJsonCommandDecorator.cs" />
     <Compile Include="AddTwoNumbersCommand.cs" />
+    <Compile Include="Handlers\DivideTwoNumbersCommandHandler.cs" />
+    <Compile Include="Handlers\FullNameCommandHandler.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Handlers\ICommandHandler.cs" />
+    <Compile Include="LastNameCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Decorators\ValidateCommandDecorator.cs" />
   </ItemGroup>
